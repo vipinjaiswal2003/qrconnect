@@ -8,13 +8,14 @@ export default function handler(req, res) {
   }
 
   try {
-    // Generate QR code as a buffer
+    // Generate QR as buffer
     const qr_png = qr.imageSync(url, { type: "png" });
 
-    // Set headers and return the buffer
+    // Set headers
     res.setHeader("Content-Type", "image/png");
     res.status(200).end(qr_png);
   } catch (err) {
+    console.error("QR generation error:", err);
     res.status(500).send("Error generating QR code");
   }
 }
