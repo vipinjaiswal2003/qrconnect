@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+  <h1>QR Code Generator</h1>
+  <form id="qrForm">
+    <input type="text" id="urlInput" placeholder="Enter URL" required style="padding: 10px; width: 300px;">
+    <button type="submit" style="padding: 10px;">Generate</button>
+  </form>
+  <div style="margin-top:20px;">
+    <img id="qrImage" src="" alt="" />
+  </div>
+
+  <script>
+    document.getElementById("qrForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const url = document.getElementById("urlInput").value;
+      document.getElementById("qrImage").src = `/api/generate?url=${encodeURIComponent(url)}`;
+    });
+  </script>
+</body>
+</html>

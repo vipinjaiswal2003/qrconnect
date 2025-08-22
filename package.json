@@ -1,0 +1,12 @@
+{
+  "name": "qr-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "qr-image": "^3.2.0"
+  }
+}
